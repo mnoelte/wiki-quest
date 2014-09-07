@@ -22,6 +22,7 @@
   (kill-word article (extract-text (get-article article))))
 
 (comment   (Aufruf " mit Internetverbindung:"
+
 wiki-quest.core> (kill-word "lago" (extract-text (get-article "lago")))
 "Un XXX (del latín lacus) es un cuerpo de agua dulce, de una extensión considerable, que se encuentra separado del mar. El aporte de agua a los XXX viene de los ríos, de aguas freáticas y precipitación sobre el espejo de agua."
 
