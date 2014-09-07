@@ -21,6 +21,8 @@
 (defn wiki-quest [article]
   (kill-word article (extract-text (get-article article))))
 
+(defn new-function [parms] parms)
+
 (comment   (Aufruf " mit Internetverbindung:"
 
 wiki-quest.core> (kill-word "lago" (extract-text (get-article "lago")))
