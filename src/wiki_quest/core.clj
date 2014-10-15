@@ -24,6 +24,9 @@
 (defn wiki-quest [article]
   (kill-word article (extract-text (get-article article))))
 
+(comment weiter mit ~/clojure/wiki-quest/resources/lista-de-palabras.txt
+         ---------------------------------------------------------------)
+
 (defn new-function [parms] parms)
 
 (comment   (Aufruf " mit Internetverbindung:"
