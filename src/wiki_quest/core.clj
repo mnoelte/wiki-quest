@@ -41,6 +41,9 @@
 
   (comment
     Mit "lein run" funktioniert (read-line) ... anschliessend in der nrepl aber nicht mehr.
+    Ein "lein clean" (evt. noch "lein compile") schafft dann wieder abhilfe.
+    Es scheint eine Anhaengigkeit bzw. ein Side-Effekt zwischen den
+    Kompilaten fuer die nrepl und "lein run" zu geben.
     Weiter mit ...
            ---------------------------------------------------------------)
 
