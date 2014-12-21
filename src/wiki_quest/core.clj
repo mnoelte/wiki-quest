@@ -35,10 +35,13 @@
                            article-text (extract-text (get-article article))]
                        (do (println (kill-word article article-text))
                            (dotimes [n 15] (println ""))
+                           (read-line)
                            (println article)
                            (println article-text)))
 
-  (comment weiter mit ...
+  (comment
+    Mit "lein run" funktioniert (read-line) ... anschliessend in der nrepl aber nicht mehr.
+    Weiter mit ...
            ---------------------------------------------------------------)
 
   (defn new-function [parms] parms)

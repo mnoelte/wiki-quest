@@ -5,4 +5,5 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [suub/error-codes "0.2.0"]
-                 [me.raynes/laser "2.0.0-SNAPSHOT"]])
+                 [me.raynes/laser "2.0.0-SNAPSHOT"]]
+  :main wiki-quest.core/wiki-quest2)
