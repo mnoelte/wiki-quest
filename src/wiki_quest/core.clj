@@ -1,7 +1,9 @@
 (ns wiki-quest.core
   (:require [error-codes.core :as ec]
             [me.raynes.laser :as l]
-            [clojure.string :as str]))
+            [clojure.string :as str])
+  )
+
 
 (defn get-article [article]
   (first  ; only the first paragraph
@@ -27,7 +29,7 @@
 
 (def lista-de-palabras (str/split (slurp "/home/mn/clojure/wiki-quest/resources/lista-de-palabras.txt") #"\") )
 
-(defn wiki-quest2 []
+(defn wiki-quest2 [& args]
                                         ; select randomly a word "article" from a given list of words
                                         ; fetch the respective article from wikipedia.es and eliminate the word from the explanation
 
@@ -39,15 +41,24 @@
                            (println article)
                            (println article-text)))
 
-  (comment
-    Mit "lein run" funktioniert (read-line) ... anschliessend in der nrepl aber nicht mehr.
-    Ein "lein clean" (evt. noch "lein compile") schafft dann wieder abhilfe.
-    Es scheint eine Anhaengigkeit bzw. ein Side-Effekt zwischen den
-    Kompilaten fuer die nrepl und "lein run" zu geben.
-    Weiter mit ...
-           ---------------------------------------------------------------)
+  ;; (comment
+  ;;   Mit "lein run" funktioniert (read-line) ... anschliessend in der nrepl aber nicht mehr.
+  ;;   Ein "lein clean" (evt. noch "lein compile") schafft dann wieder abhilfe.
+  ;;   Es scheint eine Anhaengigkeit bzw. ein Side-Effekt zwischen den
+  ;;   Kompilaten fuer die nrepl und "lein run" zu geben.
+
+  ;;   Experimte mit "lein uberjar" nach http://www.beaconhill.com/blog/?p=283
+  ;;   ... hat aber nicht funktioniert: "Attempting to call unbound fn: #'wiki-quest.core/-main"
+  ;;   Weiter mit ...
+  ;;   ---------------------------------------------------------------)
 
   (defn new-function [parms] parms)
+
+  ;; (defn -main
+  ;; "The application's main function"
+  ;; [& args]
+  ;; (println args))
+
 
   (comment   (Aufruf " mit Internetverbindung:"
 
