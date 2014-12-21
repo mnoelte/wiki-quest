@@ -1,10 +1,10 @@
 # wiki-quest
 
-A Clojure library designed to ... well, that part is up to you.
+A Clojure library designed to create cloze based on text from wikipedia.
 
 ## Usage
 
-FIXME
+In the repl call (wiki-quest2)
 
 ## License
 
