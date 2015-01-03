@@ -55,20 +55,22 @@
   )
 
 
-(defn wiki-quest3 [word-number old-word-number]
-  ;;         more functional version of:
-  ;; select randomly a word "article" from a given list of words
-  ;; fetch the respective article from wikipedia.es and eliminate the word from the explanation
+(defn wiki-quest3
+  ([word-number] 0)
+  ([word-number old-word-number]
+     ;;         more functional version of:
+     ;; select randomly a word "article" from a given list of words
+     ;; fetch the respective article from wikipedia.es and eliminate the word from the explanation
 
-  (let [article (nth lista-de-palabras word-number)
-        old-article (nth lista-de-palabras (if (nil? old-word-number) 0 old-word-number))
-        article-text (extract-text (get-article article))
-        old-article-text (extract-text (get-article old-article))]
-    (do (println old-article)
-        (println old-article-text)
-        (dotimes [n 15] (println ""))
-        (println (kill-word article article-text))
-        ))
+     (let [article (nth lista-de-palabras word-number)
+           old-article (nth lista-de-palabras (if (nil? old-word-number) 0 old-word-number))
+           article-text (extract-text (get-article article))
+           old-article-text (extract-text (get-article old-article))]
+       (do (println old-article)
+           (println old-article-text)
+           (dotimes [n 15] (println ""))
+           (println (kill-word article article-text))
+           )))
   word-number)
 
 
