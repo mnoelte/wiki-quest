@@ -55,9 +55,7 @@
   )
 
 
-(defn wiki-quest3
-  ([word-number] 0)
-  ([word-number old-word-number]
+(defn wiki-quest3 [word-number old-word-number]
      ;;         more functional version of:
      ;; select randomly a word "article" from a given list of words
      ;; fetch the respective article from wikipedia.es and eliminate the word from the explanation
@@ -68,9 +66,9 @@
            old-article-text (extract-text (get-article old-article))]
        (do (println old-article)
            (println old-article-text)
-           (dotimes [n 15] (println ""))
+           (dotimes [n 5] (println ""))
            (println (kill-word article article-text))
-           )))
+           ))
   word-number)
 
 
