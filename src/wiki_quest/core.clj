@@ -80,13 +80,24 @@
 
   ;;   Experimte mit "lein uberjar" nach http://www.beaconhill.com/blog/?p=283
   ;;   ... hat aber nicht funktioniert: "Attempting to call unbound fn: #'wiki-quest.core/-main"
-  ;;   Weiter mit ...
-  ;;   ---------------------------------------------------------------)
+;;   ---------------------------------------------------------------)
 
-  ;; (defn -main
-  ;; "The application's main function"
-  ;; [& args]
-  ;; (println args))
+;; 8.1.2015
+(take 3 (repeatedly #(let [r1 (rand-int 100) r2 (rand-int 100)] [r1 r2])))
+;; ... und das jetzt mit iterate :
+;; Bsp: (def fib (map first (iterate (fn [[a b]] [b (+' a b)]) [0 1])))
+;;      (take 10 fib)
+(take 10 (iterate (fn [[nrnd ornd]] [ornd (rand-int 100)] ) [0 0]))
+;;   -->   ([0 0] [0 8] [8 26] [26 4] [4 34] [34 55] [55 9] [9 67] [67 8] [8 78])
+
+;; ...let [article (nth lista-de-palabras word-number)
+(take 10 (iterate (fn [[nrnd n-article ornd o-article]] (let [lnrnd (rand-int 100) lnarticle (nth lista-de-palabras lnrnd)] [ornd o-article lnrnd lnarticle]) ) [0 "" 0 ""]))
+;; -->  ([0 "" 0 ""] [0 "" 34 "cinco"] [34 "cinco" 7 "arena"] [7 "arena" 86 "lluvia"] [86 "lluvia" 90 "madre"] [90 "madre" 74 "hora"] [74 "hora" 82 "ley"] [82 "ley" 19 "bebida"] [19 "bebida" 70 "guerra"] [70 "guerra" 99 "mesa"])
+
+;; ...let [article (nth lista-de-palabras word-number)
+(take 10 (iterate (fn [[nrnd n-article ornd o-article]] (let [lnrnd (rand-int 100) lnarticle (extract-text  (get-article (nth lista-de-palabras lnrnd)))] [ornd o-article lnrnd lnarticle]) ) [0 "" 0 ""]))
+;; --> Ausgabe: wie zuvor; mit dem ersten Wiki-Absatz
+;; WEITER MIT: ... mit next auf lazy SEQs zugreifen ... ist das möglich?
 
 
   ;; Aufruf " mit Internetverbindung:"
